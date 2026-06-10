@@ -81,7 +81,7 @@ document.querySelectorAll('.reveal').forEach((el, i) => {
 });
 
 /* ── TYPEWRITER ──────────────────────────────────────────── */
-const roles   = ['QA Engineer', 'Test Automation Dev', 'Banking Security Tester', 'Selenium Expert', 'Software Engineer'];
+const roles   = ['QA Engineer', 'Test Automation Developer', 'Banking Domain Expert', 'Software Engineer', 'Selenium Specialist'];
 const typed   = document.getElementById('typed');
 let ri = 0, ci = 0, del = false;
 
@@ -173,16 +173,6 @@ const skObs = new IntersectionObserver(entries => {
 }, { threshold: 0.3 });
 document.querySelectorAll('.sk-card').forEach(c => skObs.observe(c));
 
-/* ── CONTACT FORM ────────────────────────────────────────── */
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const name = document.getElementById('fname').value.trim();
-  const mail = document.getElementById('femail').value.trim();
-  const subj = document.getElementById('fsubj').value.trim();
-  const msg  = document.getElementById('fmsg').value.trim();
-  const body = encodeURIComponent(`Hi Kaarthikeyan,\n\nMy name is ${name} (${mail}).\n\n${msg}`);
-  window.location.href = `mailto:Kaarthikeyanvs@gmail.com?subject=${encodeURIComponent(subj)}&body=${body}`;
-});
 
 /* ── CANVAS PARTICLE NETWORK (hero) ──────────────────────── */
 ;(function(){

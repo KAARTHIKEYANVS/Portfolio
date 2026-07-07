@@ -633,6 +633,7 @@ strong{font-weight:700}
   font-weight:900;font-size:.85rem;color:var(--acc);flex-shrink:0;
   font-family:var(--m);
 }
+.rax-logo{background:transparent!important;border-color:transparent!important;padding:0}
 .exp-co h3{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:900;color:var(--txt);letter-spacing:-.04em;margin-bottom:5px}
 .exp-loc{display:flex;align-items:center;gap:5px;font-size:.82rem;color:var(--txt3)}
 .exp-loc svg{stroke:var(--txt3)}

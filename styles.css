@@ -603,6 +603,13 @@ strong{font-weight:700}
   background:var(--acc-bg);color:var(--acc);border:1px solid rgba(124,92,252,.18);
 }
 .sk-tags span:hover{transform:translateY(-1px);box-shadow:0 4px 12px var(--acc-glow)}
+.has-ico{display:inline-flex!important;align-items:center;gap:5px}
+.sk-ico{width:14px;height:14px;object-fit:contain;flex-shrink:0;display:block}
+/* Dark-background icons (Eclipse, Anthropic) need invert in dark theme */
+[data-theme="dark"] .ico-dim{filter:invert(1) brightness(.88)}
+/* In light theme, brighten neon icons slightly and darken dark ones */
+[data-theme="light"] .sk-ico{filter:brightness(.8)}
+[data-theme="light"] .ico-dim{filter:brightness(.55)}
 .a-tags span{background:var(--pur-bg);color:var(--pur);border-color:var(--pur-bg)}
 .o-tags span{background:var(--grn-bg);color:var(--grn);border-color:var(--grn-bg)}
 .d-tags span{background:var(--amb-bg);color:var(--amb);border-color:var(--amb-bg)}

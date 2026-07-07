@@ -57,15 +57,21 @@
   --glass: rgba(255,255,255,.75);
   --glass-border: rgba(124,92,252,.15);
   --txt:  #0D0B1A;
-  --txt2: #5A5378;
-  --txt3: #9B97B3;
+  --txt2: #3D3460;
+  --txt3: #635E82;
   --acc:  #6B4EEA;
   --acc-l:#8B72FF;
-  --acc-bg:rgba(107,78,234,.08);
-  --acc-bg2:rgba(107,78,234,.04);
+  --acc-bg:rgba(107,78,234,.1);
+  --acc-bg2:rgba(107,78,234,.05);
   --acc-glow:rgba(107,78,234,.2);
+  /* Secondary colors darkened for light-mode contrast */
+  --grn:    #166534;  --grn-bg: rgba(22,101,52,.1);
+  --cyn:    #0369A1;  --cyn-bg: rgba(3,105,161,.1);
+  --amb:    #92400E;  --amb-bg: rgba(146,64,14,.1);
+  --pur:    #6D28D9;  --pur-bg: rgba(109,40,217,.1);
+  --ros:    #9F1239;  --ros-bg: rgba(159,18,57,.1);
   --bdr: rgba(13,11,26,.1);
-  --bdr2:rgba(13,11,26,.05);
+  --bdr2:rgba(13,11,26,.09);
   --bdr-acc:rgba(107,78,234,.3);
   --sh:  0 4px 24px rgba(13,11,26,.08);
   --sh-lg:0 16px 56px rgba(13,11,26,.12);
@@ -597,9 +603,9 @@ strong{font-weight:700}
   background:var(--acc-bg);color:var(--acc);border:1px solid rgba(124,92,252,.18);
 }
 .sk-tags span:hover{transform:translateY(-1px);box-shadow:0 4px 12px var(--acc-glow)}
-.a-tags span{background:var(--pur-bg);color:var(--pur);border-color:rgba(192,132,252,.2)}
-.o-tags span{background:var(--grn-bg);color:var(--grn);border-color:rgba(74,222,128,.2)}
-.d-tags span{background:var(--amb-bg);color:var(--amb);border-color:rgba(251,176,36,.2)}
+.a-tags span{background:var(--pur-bg);color:var(--pur);border-color:var(--pur-bg)}
+.o-tags span{background:var(--grn-bg);color:var(--grn);border-color:var(--grn-bg)}
+.d-tags span{background:var(--amb-bg);color:var(--amb);border-color:var(--amb-bg)}
 
 /* ── EXPERIENCE ──────────────────────────────────────────── */
 .exp-card{
@@ -699,6 +705,50 @@ strong{font-weight:700}
   font-size:.73rem;font-weight:600;color:var(--txt3);
   padding:3px 10px;background:var(--bdr2);border-radius:5px;
 }
+.proj-link{
+  margin-left:auto;font-size:.73rem;font-weight:600;
+  padding:3px 10px;border-radius:5px;
+  background:var(--acc-bg);color:var(--acc);
+  text-decoration:none;transition:opacity .2s;
+}
+.proj-link:hover{opacity:.72}
+
+.personal-proj-header{
+  display:flex;align-items:center;gap:16px;
+  margin:56px 0 28px;padding:18px 22px;
+  background:var(--glass);backdrop-filter:blur(16px);
+  border:1px solid var(--glass-border);border-radius:var(--r);
+  border-left:3px solid var(--pur);
+  position:relative;overflow:hidden;
+}
+.personal-proj-header::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,var(--pur-bg) 0%,transparent 60%);
+  pointer-events:none;
+}
+.pp-hdr-icon{
+  position:relative;z-index:1;flex-shrink:0;
+  width:38px;height:38px;border-radius:10px;
+  background:var(--pur-bg);border:1px solid var(--pur-bg);
+  display:flex;align-items:center;justify-content:center;
+}
+.pp-hdr-icon svg{stroke:var(--pur)}
+.pp-hdr-text{
+  position:relative;z-index:1;flex:1;display:flex;flex-direction:column;gap:3px;
+}
+.pp-hdr-title{
+  font-size:.95rem;font-weight:800;color:var(--txt);letter-spacing:-.01em;
+}
+.pp-hdr-sub{
+  font-size:.73rem;font-weight:500;color:var(--txt2);font-family:var(--m);
+}
+.pp-hdr-badge{
+  position:relative;z-index:1;flex-shrink:0;
+  font-size:.69rem;font-weight:700;font-family:var(--m);
+  padding:5px 13px;border-radius:var(--rfl);
+  background:var(--pur-bg);color:var(--pur);
+  border:1px solid var(--pur-bg);
+}
 
 /* ── EDUCATION ───────────────────────────────────────────── */
 .edu-list{display:flex;flex-direction:column;gap:14px}
@@ -747,9 +797,9 @@ strong{font-weight:700}
   width:48px;height:48px;border-radius:12px;flex-shrink:0;
   display:flex;align-items:center;justify-content:center;
 }
-.cc-email{background:var(--acc-bg);border:1px solid rgba(124,92,252,.2)}.cc-email svg{stroke:var(--acc)}
-.cc-phone{background:var(--grn-bg);border:1px solid rgba(74,222,128,.2)}.cc-phone svg{stroke:var(--grn)}
-.cc-linkedin{background:var(--cyn-bg);border:1px solid rgba(34,211,238,.2)}.cc-linkedin svg{fill:var(--cyn)}
+.cc-email{background:var(--acc-bg);border:1px solid var(--acc-bg)}.cc-email svg{stroke:var(--acc)}
+.cc-phone{background:var(--grn-bg);border:1px solid var(--grn-bg)}.cc-phone svg{stroke:var(--grn)}
+.cc-linkedin{background:var(--cyn-bg);border:1px solid var(--cyn-bg)}.cc-linkedin svg{fill:var(--cyn)}
 .cc-body{flex:1;display:flex;flex-direction:column;gap:3px;min-width:0}
 .cc-label{font-family:var(--m);font-size:.68rem;color:var(--txt3);text-transform:uppercase;letter-spacing:.07em}
 .cc-val{font-size:.88rem;font-weight:600;color:var(--txt);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
